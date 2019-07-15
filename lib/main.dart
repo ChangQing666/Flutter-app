@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
                     if (_pageController.position.haveDimensions) {
                       delta = _pageController.page - index;
-                      y = 1 - delta.abs();
+                      y = 1 - delta.abs().clamp(0.0,1.0);
                       print(delta);
                     }
                     return Column(
