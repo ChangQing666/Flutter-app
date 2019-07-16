@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 var pageList = [
   PageModel(
-      imageUrl: "assets/illustration1.png",
+      imageUrl: "assets/images/illustration1.png",
       title: "MUSIC",
       body: "EXPERIENCE WICKED PLAYLISTS",
       titleGradient: gradients[0]),
   PageModel(
-      imageUrl: "assets/illustration2.png",
+      imageUrl: "assets/images/illustration2.png",
       title: "SPA",
       body: "FEEL THE MAGIC OF WELLNESS",
       titleGradient: gradients[1]),
   PageModel(
-      imageUrl: "assets/illustration3.png",
+      imageUrl: "assets/images/illustration3.png",
       title: "TRAVEL",
       body: "LET'S HIKE UP",
       titleGradient: gradients[2]),

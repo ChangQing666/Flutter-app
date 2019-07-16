@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_view/page_indicator.dart';
 import 'data.dart';
-import 'package:page_view/pages/home.dart';
+import 'package:page_view/pages/home_page/home.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       initialRoute: '/',
       routes: {
-        '/home' : (BuildContext context) => HomePage(),
+        '/home': (BuildContext context) => HomePage(),
       },
     );
   }
@@ -34,9 +35,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: currentPage);
-    _animationController =
-        AnimationController(duration: Duration(microseconds: 700), vsync: this);
-    _scaleAnimation = Tween(begin: 0.6, end: 1.0).animate(_animationController);
+    _animationController = AnimationController(
+        duration: Duration(microseconds: 1000), vsync: this);
+    _scaleAnimation = Tween(begin: 0.3, end: 1.0).animate(_animationController);
   }
 
   @override
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
-//          fit: StackFit.expand,
+          fit: StackFit.expand,
           children: <Widget>[
             PageView.builder(
               itemCount: pageList.length,
@@ -67,10 +68,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               onPageChanged: (index) {
                 setState(() {
                   currentPage = index;
-                  if(index == pageList.length-1) {
+                  if (index == pageList.length - 1) {
                     _animationController.forward();
                     lastPage = true;
-                  }else {
+                  } else {
                     _animationController.reset();
                     lastPage = false;
                   }
@@ -86,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
                     if (_pageController.position.haveDimensions) {
                       delta = _pageController.page - index;
-                      y = 1 - delta.abs().clamp(0.0,1.0);
+                      y = 1 - delta.abs().clamp(0.0, 1.0);
                       print(delta);
                     }
                     return Column(
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             Positioned(
               bottom: 80,
-              left:30,
+              left: 30,
               child: Container(
                 width: 200,
                 child: PageIndicator(currentPage, pageList.length),
@@ -131,16 +132,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             Positioned(
               bottom: 50,
-              right:20,
+              right: 20,
               child: ScaleTransition(
                 scale: _scaleAnimation,
-                child: lastPage ? FloatingActionButton(
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.arrow_forward,color: Colors.black,),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                ) : Container(),
+                child: lastPage
+                    ? FloatingActionButton(
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                      )
+                    : Container(),
               ),
             ),
           ],
