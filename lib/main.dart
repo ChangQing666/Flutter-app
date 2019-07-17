@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_view/page_indicator.dart';
+import 'package:page_view/pages/home_page/stack_test.dart';
 import 'data.dart';
 import 'package:page_view/pages/home_page/home.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/home': (BuildContext context) => HomePage(),
+        '/stack_test': (BuildContext context) => StackTestPage(),
       },
     );
   }
