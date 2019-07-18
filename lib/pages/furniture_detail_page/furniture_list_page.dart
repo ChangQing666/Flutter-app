@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'detailData.dart';
-import 'detailIndicator.dart';
+import 'data.dart';
+import 'indicator.dart';
 
 class DetailPage extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   @override
   void initState() {
     _animationController = AnimationController(
-        duration: Duration(milliseconds: 1500), vsync: this);
+        duration: Duration(milliseconds: 800), vsync: this);
     _titleAnim = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
@@ -92,7 +92,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       borderRadius:
                           BorderRadius.only(bottomLeft: Radius.circular(60.0)),
                       child: Image.asset(furnitureDetailList[_index].imageUrl,
-                          fit: BoxFit.fitHeight)),
+                          fit: BoxFit.cover)),
                   Padding(
                     padding: const EdgeInsets.only(top: 200.0, left: 40.0),
                     child: Column(

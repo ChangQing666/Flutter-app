@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:page_view/pages/home_page/data.dart';
+import 'package:page_view/pages/furniture_list_page/data.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();

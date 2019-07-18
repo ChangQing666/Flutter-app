@@ -2,25 +2,19 @@ import 'package:flutter/material.dart';
 
 var furnitureDetailList = [
   ItemModel(
-    imageUrl: 'assets/images/f1.jpeg',
+    imageUrl: 'assets/images/f01.png',
     title: 'Hemes ArmChair',
     subTitle: 'NEW SALE',
     price: '128',
   ),
    ItemModel(
-    imageUrl: 'assets/images/f2.jpeg',
+    imageUrl: 'assets/images/f02.png',
     title: 'Sofar ArmChari',
     subTitle: 'OLD SALE',
     price: '328',
   ),
    ItemModel(
-    imageUrl: 'assets/images/f3.jpeg',
-    title: 'Wodden ArmChair',
-    subTitle: 'FRESH SALE',
-    price: '628',
-  ),
-  ItemModel(
-    imageUrl: 'assets/images/f4.jpeg',
+    imageUrl: 'assets/images/f03.png',
     title: 'Wodden ArmChair',
     subTitle: 'FRESH SALE',
     price: '628',
