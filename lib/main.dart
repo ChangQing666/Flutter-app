@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_view/page_indicator.dart';
+import 'package:page_view/pages/home_page/detail.dart';
 import 'package:page_view/pages/home_page/stack_test.dart';
 import 'data.dart';
 import 'package:page_view/pages/home_page/home.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (BuildContext context) => HomePage(),
         '/stack_test': (BuildContext context) => StackTestPage(),
+        '/detail': (BuildContext context) => DetailPage(),
       },
     );
   }
@@ -33,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Animation _scaleAnimation;
   int currentPage = 0;
   bool lastPage = false;
+
   @override
   void initState() {
     super.initState();
@@ -90,7 +93,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     if (_pageController.position.haveDimensions) {
                       delta = _pageController.page - index;
                       y = 1 - delta.abs().clamp(0.0, 1.0);
-                      print(delta);
                     }
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,

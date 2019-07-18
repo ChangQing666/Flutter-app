@@ -134,72 +134,77 @@ class _HomePageState extends State<HomePage> {
                           fit: StackFit.expand,
                           overflow: Overflow.visible,
                           children: [
-                            Container(
-                              margin: EdgeInsets.only(bottom: 60.0),
-                              decoration: BoxDecoration(
-                                color: (index % 2 == 0)
-                                    ? Colors.white
-                                    : Color(0xFF2a2d3f),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black12,
-                                    offset: Offset(0.0, 12.0),
-                                    blurRadius: 10.0,
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 30.0, right: 10.0, bottom: 60.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 50.0,
-                                    ),
-                                    Text(item.title,
-                                        style: TextStyle(
-                                          color: (index % 2 == 0)
-                                              ? Colors.black
-                                              : Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0,
-                                        )),
-                                    SizedBox(
-                                      height: 8.0,
-                                    ),
-                                    Text(item.subTitle,
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14.0,
-                                        )),
-                                    SizedBox(
-                                      height: 70.0,
-                                    ),
-                                    RichText(
-                                      text: TextSpan(
-                                        text: item.price,
-                                        style: TextStyle(
-                                            fontSize: 25.0,
+                            InkWell(
+                              onTap: (){
+                                Navigator.pushNamed(context, '/detail');
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 60.0),
+                                decoration: BoxDecoration(
+                                  color: (index % 2 == 0)
+                                      ? Colors.white
+                                      : Color(0xFF2a2d3f),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black12,
+                                      offset: Offset(0.0, 12.0),
+                                      blurRadius: 10.0,
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 30.0, right: 10.0, bottom: 60.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      SizedBox(
+                                        height: 50.0,
+                                      ),
+                                      Text(item.title,
+                                          style: TextStyle(
                                             color: (index % 2 == 0)
                                                 ? Colors.black
                                                 : Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: ' \$',
-                                              style: TextStyle(
-                                                  fontSize: 28.0,
-                                                  color: (index % 2 == 0)
-                                                      ? Colors.black
-                                                      : Colors.white)),
-                                        ],
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          )),
+                                      SizedBox(
+                                        height: 8.0,
                                       ),
-                                    )
-                                  ],
+                                      Text(item.subTitle,
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14.0,
+                                          )),
+                                      SizedBox(
+                                        height: 70.0,
+                                      ),
+                                      RichText(
+                                        text: TextSpan(
+                                          text: item.price,
+                                          style: TextStyle(
+                                              fontSize: 25.0,
+                                              color: (index % 2 == 0)
+                                                  ? Colors.black
+                                                  : Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          children: <TextSpan>[
+                                            TextSpan(
+                                                text: ' \$',
+                                                style: TextStyle(
+                                                    fontSize: 28.0,
+                                                    color: (index % 2 == 0)
+                                                        ? Colors.black
+                                                        : Colors.white)),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
