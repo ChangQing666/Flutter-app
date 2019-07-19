@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:page_view/page_indicator.dart';
-import 'package:page_view/pages/home_page/detail.dart';
-import 'package:page_view/pages/home_page/stack_test.dart';
-import 'data.dart';
-import 'package:page_view/pages/home_page/home.dart';
+import 'package:page_view/pages/furniture_detail_page/furniture_list_page.dart';
+import 'package:page_view/pages/onboarding_page/indicator.dart';
+import 'package:page_view/pages/onboarding_page/data.dart';
+import 'package:page_view/pages/furniture_list_page/furniture_list_page.dart';
+import 'package:page_view/pages/test_page/stack_test.dart';
 
 void main() => runApp(MyApp());
 
