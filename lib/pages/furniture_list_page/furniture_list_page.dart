@@ -267,7 +267,7 @@ class _HomePageState extends State<HomePage> {
            shape: CircleBorder(),
             child: Icon(Icons.add,size:35.0,color: Colors.white),
             onPressed: (){
-
+                Navigator.pushNamed(context, '/city');
             }
         ),
       ),

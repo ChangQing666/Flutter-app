@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_view/pages/city_page/city_page.dart';
 import 'package:page_view/pages/furniture_detail_page/furniture_list_page.dart';
 import 'package:page_view/pages/onboarding_page/indicator.dart';
 import 'package:page_view/pages/onboarding_page/data.dart';
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'PAGE VIEW',
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         '/home': (BuildContext context) => HomePage(),
         '/stack_test': (BuildContext context) => StackTestPage(),
         '/detail': (BuildContext context) => DetailPage(),
+        '/city': (BuildContext context) => CityPage(),
       },
     );
   }
