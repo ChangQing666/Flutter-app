@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:page_view/pages/furniture_list_page/data.dart';
-class HomePage extends StatefulWidget {
+class FurnitureListPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _FurnitureListPageState createState() => _FurnitureListPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _FurnitureListPageState extends State<FurnitureListPage> {
   int _currentIndex = 0;
 
   @override
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.search),
                   color: Colors.black54,
                   onPressed: () {
-                    Navigator.pushNamed(context, '/stack_test');
+                    Navigator.pushNamed(context, '/test');
                   }),
             ],
           ),
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             InkWell(
                               onTap: (){
-                                Navigator.pushNamed(context, '/detail');
+                                Navigator.pushNamed(context, '/furniture_detail');
                               },
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 60.0),

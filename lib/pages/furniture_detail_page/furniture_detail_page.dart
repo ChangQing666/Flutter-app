@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 import 'indicator.dart';
 
-class DetailPage extends StatefulWidget {
+class FurnitureDetailPage extends StatefulWidget {
   @override
-  _DetailPageState createState() => _DetailPageState();
+  _FurnitureDetailPageState createState() => _FurnitureDetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
+class _FurnitureDetailPageState extends State<FurnitureDetailPage> with TickerProviderStateMixin {
   int _index = 0;
 
   AnimationController _animationController;

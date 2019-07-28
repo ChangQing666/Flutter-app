@@ -1,57 +1,64 @@
 import 'package:flutter/material.dart';
+import 'data.dart';
 
 class IndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Color(0xff232540),
       appBar: AppBar(
         title: Text('首页'),
-        backgroundColor:Colors.indigo,
+        backgroundColor: Color(0xff232540),
         elevation: 0,
       ),
       body: GridView.count(
         primary: false,
         padding: const EdgeInsets.all(20.0),
         crossAxisSpacing: 20.0,
-        mainAxisSpacing: 40.0,
+        mainAxisSpacing: 20.0,
         crossAxisCount: 2,
         childAspectRatio: 1.5,
-        children: <Widget>[
-          Item(),
-          Item(),
-          Item(),
-          Item(),
-          Item(),
-          Item(),
-        ],
+        children: getList(context),
       ),
     );
   }
 }
 
-Widget Item() {
-  return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        gradient: LinearGradient(
-          colors: [Colors.pinkAccent, Colors.pinkAccent.withOpacity(0.9)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          tileMode: TileMode.mirror,
-          stops: [0.0, 1],
+getList(context) {
+  List<Widget> _list = [];
+  for (int i = 0; i < list.length; i++) {
+    _list.add(getItem(context, list[i]));
+  }
+  return _list;
+}
 
-        ),
-        boxShadow: [BoxShadow(
-          color: Colors.pinkAccent,
-          blurRadius: 1,
-          offset: Offset(0,3),
-          spreadRadius: 2,
-        ),]
-      ),
-      child: Center(
-          child: Text('Hexo',
-            style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.white),)));
+Widget getItem(context, ItemModel item) {
+  return InkWell(
+    onTap: (){
+      Navigator.pushNamed(context, item.routeName);
+    },
+    child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [item.bgColor, item.bgColor.withOpacity(0.9)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              tileMode: TileMode.mirror,
+              stops: [0.0, 1],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: item.bgColor,
+                blurRadius: 0,
+                offset: Offset(0, 1),
+                spreadRadius: 1,
+              ),
+            ]),
+        child: Center(
+            child: Text(
+          item.title,
+          style: TextStyle(fontSize: 30.0, color: Colors.white),
+        ))),
+  );
 }
