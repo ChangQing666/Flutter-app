@@ -9,6 +9,11 @@ class ItemModel {
 
 var list = [
   ItemModel(
+    title: '基础组件',
+    bgColor: Color(0xff164396),
+    routeName: '/widget',
+  ),
+  ItemModel(
     title: 'OnBoarding',
     bgColor: Colors.pinkAccent,
     routeName: '/onboarding',
@@ -32,16 +37,6 @@ var list = [
     title: 'Test',
     bgColor: Color(0xff7254b2),
     routeName: '/test',
-  ),
-  ItemModel(
-    title: '...',
-    bgColor: Color(0xffbe4236),
-    routeName: '/index',
-  ),
-  ItemModel(
-    title: '...',
-    bgColor: Color(0xff164396),
-    routeName: '/index',
   ),
   ItemModel(
     title: '...',
