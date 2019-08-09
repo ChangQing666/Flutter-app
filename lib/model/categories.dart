@@ -1,18 +1,20 @@
 class Categories {
 //  int id;
 //    int count;
-    int total;
+//    int total;
 //    String nextPageUrl;
 //    List<Item> itemList;
 //  String description;
+     String date;
   Categories(
       {
 //      this.id,
 //      this.count,
-      this.total,
+//      this.total,
 //      this.nextPageUrl,
 //      this.itemList,
 //      this.description
+this.date
       });
 
   factory Categories.fromJson(Map<String, dynamic> json) {
@@ -22,10 +24,11 @@ class Categories {
     return Categories(
 //          id: json['id'],
 //          count: json['count'],
-          total: int.parse(json['total']),
+//          total: int.parse(json['total']),
 //          nextPageUrl: json['nextPageUrl'],
 //          itemList: itemList,
 //        description: json['description']
+    date: json['date']
         );
   }
 }

@@ -2,17 +2,24 @@ import 'dart:async' show Future;
 import 'package:page_view/api/api.dart';
 import './net_utils.dart';
 import '../model/categories.dart';
-
+import '../model/news_latest.dart';
 
 class DataUtils{
-  // 全部分类
-  static Future<Categories> getCategories() async{
-//    var response = await NetUtils.get(Api.CATEGORIES);
-    var response = await NetUtils.get('http://baobab.kaiyanapp.com/api/v4/categories/all');
-    print("response.toString() ${response}");
-    Categories categories = Categories.fromJson(response);
-    return categories;
+  static Future<NewsLatest> getNewsLatest() async {
+    var response = await NetUtils.get('https://news-at.zhihu.com/api/4/news/latest');
+    print("response: ${response}");
+    NewsLatest newsLatest = NewsLatest.fromJson(response);
+    return newsLatest;
   }
+
+  // 全部分类
+//  static Future<Categories> getCategories() async{
+////    var response = await NetUtils.get(Api.CATEGORIES);
+//    var response = await NetUtils.get('https://news-at.zhihu.com/api/4/news/latest');
+//    print("response: ${response}");
+//    Categories categories = Categories.fromJson(response);
+//    return categories;
+//  }
 
   // 评论
 //  static Future<Replies> getReplies(Map<String,String> params) async{
