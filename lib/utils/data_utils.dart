@@ -3,13 +3,19 @@ import 'package:page_view/api/api.dart';
 import './net_utils.dart';
 import '../model/categories.dart';
 import '../model/news_latest.dart';
-
+import '../model/weekly.dart';
 class DataUtils{
   static Future<NewsLatest> getNewsLatest() async {
     var response = await NetUtils.get('https://news-at.zhihu.com/api/4/news/latest');
     print("response: ${response}");
     NewsLatest newsLatest = NewsLatest.fromJson(response);
     return newsLatest;
+  }
+  static Future<Weekly> getWeekly() async {
+    var response = await NetUtils.get('https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/weekly');
+    print("weekly response: ${response}");
+    Weekly weekly = Weekly.fromJson(response);
+    return weekly;
   }
 
   // 全部分类

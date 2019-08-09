@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:page_view/model/categories.dart';
 import 'package:page_view/model/news_latest.dart';
 import 'package:page_view/utils/data_utils.dart';
-import 'package:flt_video_player/flt_video_player.dart';
 
 class WidgetPage extends StatefulWidget {
   const WidgetPage({Key key}) : super(key: key);
@@ -27,14 +26,10 @@ class _WidgetPageState extends State<WidgetPage>
 
   Future<NewsLatest> newsLatest;
   TabController _tabController;
-  VideoPlayerController _controller;
   void initState() {
     super.initState();
     newsLatest = DataUtils.getNewsLatest();
     _tabController = TabController(length: tabList.length, vsync: this);
-    _controller =
-        VideoPlayerController.path("http://image.cqfee.top/IMAX_NEZHA.mp4")
-          ..initialize();
   }
 
   @override
@@ -71,10 +66,6 @@ class _WidgetPageState extends State<WidgetPage>
                 children: <Widget>[
                   Image.network(
                       'http://img.kaiyanapp.com/eaded016cfcb90a695661e37f2913a6b.jpeg?imageMogr2/quality/60'),
-                  AspectRatio(
-                    aspectRatio: 1.8,
-                    child: VideoPlayer(_controller),
-                  ),
                   Text("${snapshot.data.stories[0].title}"),
                 ],
               );

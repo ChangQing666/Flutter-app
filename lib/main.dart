@@ -5,9 +5,11 @@ import 'package:page_view/pages/index_page/index_page.dart';
 import 'package:page_view/pages/furniture_list_page/furniture_list_page.dart';
 import 'package:page_view/pages/onboarding_page/onboarding_page.dart';
 import 'package:page_view/pages/test_page/stack_test.dart';
-//import 'package:page_view/pages/widget_page/widget_page.dart';
+import 'package:page_view/pages/video_page/chewie_page.dart';
+import 'package:page_view/pages/weekly_page/weekly_page.dart';
+import 'package:page_view/pages/widget_page/widget_page.dart';
 
-import 'pages/video_page/video_page.dart';
+//import 'pages/video_page/video_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,8 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Colors.white,
 
-//      home: WidgetPage(),
-      home: VideoApp(),
+      home: WeeklyPage(),
+//      home: ChewieDemo(),
       theme: ThemeData(
           accentColor: Colors.deepOrangeAccent,
           accentTextTheme: TextTheme(body1: TextStyle(color: Colors.amber))
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/furniture_detail': (BuildContext context) => FurnitureDetailPage(),
         '/city': (BuildContext context) => CityPage(),
         '/test': (BuildContext context) => StackTestPage(),
+        '/video':(BuildContext context) => ChewieDemo(),
       },
     );
   }
