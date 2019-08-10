@@ -11,10 +11,9 @@ import 'package:chewie/src/cupertino_controls.dart';
 //}
 
 class ChewieDemo extends StatefulWidget {
-  ChewieDemo({this.title = 'Chewie Demo'});
-
+  ChewieDemo({Key key, this.id, this.title='Video',})  : super(key: key);
   final String title;
-
+  final int id;
   @override
   State<StatefulWidget> createState() {
     return _ChewieDemoState();
@@ -83,7 +82,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text('${widget.id}'),
         ),
         body: Column(
           children: <Widget>[

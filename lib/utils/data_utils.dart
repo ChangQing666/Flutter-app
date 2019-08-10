@@ -11,8 +11,16 @@ class DataUtils{
     NewsLatest newsLatest = NewsLatest.fromJson(response);
     return newsLatest;
   }
-  static Future<Weekly> getWeekly() async {
-    var response = await NetUtils.get('https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/weekly');
+  static Future<Weekly> getWeekly(int index) async {
+    String _url = '';
+    if(index == 0) {
+      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/weekly';
+    }else if(index == 1) {
+      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/monthly';
+    }else if(index == 2) {
+      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/historical';
+    }
+    var response = await NetUtils.get(_url);
     print("weekly response: ${response}");
     Weekly weekly = Weekly.fromJson(response);
     return weekly;
