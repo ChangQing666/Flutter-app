@@ -3,7 +3,7 @@
 一个flutter app项目，意在整合flutter开发中常见的组件及交互。目前做了一些基本的UI页面及多种轮播效果，现在已开眼视频为例进行开发学习，持续更新中。。。
 
 ## 效果
-![image](https://github.com/ChangQing666/Flutter-app/blob/master/assets/ui/preview20190811.gif)
+![image](https://github.com/ChangQing666/Flutter-app/blob/master/assets/UI/preview20190811.gif)
 
 ---
 
