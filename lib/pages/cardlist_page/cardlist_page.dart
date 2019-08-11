@@ -2,12 +2,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'data.dart';
 
-class StackTestPage extends StatefulWidget {
+class CardlistPage extends StatefulWidget {
   @override
-  _StackTestPageState createState() => _StackTestPageState();
+  _CardlistPageState createState() => _CardlistPageState();
 }
 
-class _StackTestPageState extends State<StackTestPage> {
+class _CardlistPageState extends State<CardlistPage> {
  dynamic currentPage = lists.length-1;
   @override
   Widget build(BuildContext context) {
@@ -20,25 +20,31 @@ class _StackTestPageState extends State<StackTestPage> {
     });
 
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: Colors.white,
-      body: SizedBox(
-        width: 400,
-        height: 600,
-        child: Stack(
-          children: <Widget>[
-            CardScrollWidget(currentPage),
-            Positioned.fill(
-              child: PageView.builder(
-                itemCount: lists.length,
-                reverse: true,
-                controller: controller,
-                itemBuilder: (context, index) {
-                  return Container();
-                },
-              )
-            ),
-          ],
+      appBar: AppBar(
+        title: Text('Cardlist'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      backgroundColor: Color(0xff232540),
+      body: Center(
+        child: SizedBox(
+          width: 400,
+          height: 600,
+          child: Stack(
+            children: <Widget>[
+              CardScrollWidget(currentPage),
+              Positioned.fill(
+                child: PageView.builder(
+                  itemCount: lists.length,
+                  reverse: true,
+                  controller: controller,
+                  itemBuilder: (context, index) {
+                    return Container();
+                  },
+                )
+              ),
+            ],
+          ),
         ),
       ),
     );

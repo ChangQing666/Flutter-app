@@ -18,17 +18,17 @@ var cityList = [
   ),
   ItemModel(
     imageUrl: 'assets/images/city01.jpeg',
-    title: 'Golden State',
+    title: 'France Paris',
     description:
-        "The Golden State Warriors are an American professional basketball team based in San Francisco, California. The Warriors compete in the National Basketball Association (NBA), as a member of the league's Western Conference Pacific Division. ",
-    color: Colors.blue.withOpacity(0.2),
+    'Paris is the capital and most populous city of France, with an area of 105 square kilometres (41 square miles) and an official estimated population of 2,140,526 residents as of 1 January 2019',
+    color: Colors.pinkAccent.withOpacity(0.2),
   ),
   ItemModel(
     imageUrl: 'assets/images/city02.jpeg',
-    title: 'France Paris',
+    title: 'Golden State',
     description:
-        'Paris is the capital and most populous city of France, with an area of 105 square kilometres (41 square miles) and an official estimated population of 2,140,526 residents as of 1 January 2019',
-    color: Colors.pinkAccent.withOpacity(0.2),
+    "The Golden State Warriors are an American professional basketball team based in San Francisco, California. The Warriors compete in the National Basketball Association (NBA), as a member of the league's Western Conference Pacific Division. ",
+    color: Colors.blue.withOpacity(0.2),
   ),
   ItemModel(
     imageUrl: 'assets/images/city03.jpeg',

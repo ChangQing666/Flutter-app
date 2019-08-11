@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:page_view/pages/city_page/city_page.dart';
-import 'package:page_view/pages/furniture_detail_page/furniture_detail_page.dart';
-import 'package:page_view/pages/index_page/index_page.dart';
-import 'package:page_view/pages/furniture_list_page/furniture_list_page.dart';
-import 'package:page_view/pages/onboarding_page/onboarding_page.dart';
-import 'package:page_view/pages/test_page/stack_test.dart';
-import 'package:page_view/pages/video_page/chewie_page.dart';
-import 'package:page_view/pages/video_page/video_page.dart';
-import 'package:page_view/pages/weekly_page/weekly_page.dart';
-import 'package:page_view/pages/widget_page/widget_page.dart';
-
+import 'package:page_view/utils/route_generator.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,29 +10,13 @@ class MyApp extends StatelessWidget {
       title: 'PAGE VIEW',
       debugShowCheckedModeBanner: false,
       color: Colors.white,
-
-      home: WeeklyPage(),
+      //home: WeeklyPage(),
       theme: ThemeData(
           accentColor: Colors.deepOrangeAccent,
           accentTextTheme: TextTheme(body1: TextStyle(color: Colors.amber))
       ),
-//      initialRoute: '/onboarding',
-      routes: {
-//        '/widget': (BuildContext context) => WidgetPage(),
-        '/onboaring': (BuildContext context) => OnBoardingPage(),
-        '/index': (BuildContext context) => IndexPage(),
-        '/furniture_list': (BuildContext context) => FurnitureListPage(),
-        '/furniture_detail': (BuildContext context) => FurnitureDetailPage(),
-        '/city': (BuildContext context) => CityPage(),
-        '/test': (BuildContext context) => StackTestPage(),
-        '/chewie':(BuildContext context) => ChewieDemo(),
-        '/video':(BuildContext context) => VideoPage(),
-      },
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
-}
-
-class Id{
-  int id;
-  Id(this.id);
 }

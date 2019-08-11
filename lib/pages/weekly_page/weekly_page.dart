@@ -163,7 +163,7 @@ class _WeeklyPageState extends State<WeeklyPage>
 
 
           return InkWell(
-            onTap: () => Navigator.pushNamed(context, '/video', arguments: VideoArguments(id: 1000)),
+            onTap: () => Navigator.pushNamed(context, '/video', arguments: _item.id),
 //            onTap: (){
 //              Navigator.push<String>(context, MaterialPageRoute(builder: (BuildContext context){
 //                return VideoPage(id:100);

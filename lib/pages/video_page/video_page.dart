@@ -7,10 +7,10 @@ import 'package:video_player/video_player.dart';
 import 'package:chewie/src/cupertino_controls.dart';
 
 class VideoPage extends StatefulWidget {
-  VideoPage({Key key, this.id, this.title='Video', this.arguments})  : super(key: key);
+  VideoPage({Key key, this.id, this.title='Video', @required this.params})  : super(key: key);
   final String title;
   final int id;
-  final VideoArguments arguments;
+  final int params;
   @override
   State<StatefulWidget> createState() {
     return _VideoPageState();
@@ -62,7 +62,7 @@ class _VideoPageState extends State<VideoPage> {
 
   @override
   Widget build(BuildContext context) {
-    final VideoArguments _arguments = ModalRoute.of(context).settings.arguments; // 获取上个路由传过来的参数
+//    final VideoArguments _arguments = ModalRoute.of(context).settings.arguments; // 获取上个路由传过来的参数
     return MaterialApp(
       title: widget.title,
       theme: ThemeData.light().copyWith(
@@ -82,7 +82,7 @@ class _VideoPageState extends State<VideoPage> {
               onPressed: () {
                 _chewieController.enterFullScreen();
               },
-              child: Text('全屏${_arguments.id}'),
+              child: Text('全屏${widget.params}'),
             ),
           ],
         ),
