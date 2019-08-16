@@ -9,9 +9,9 @@ class ItemModel {
 
 var list = [
   ItemModel(
-    title: '基础组件',
+    title: '开眼',
     bgColor: Color(0xff164396),
-    routeName: '/widget',
+    routeName: '/ranklist',
   ),
   ItemModel(
     title: 'OnBoarding',
@@ -19,43 +19,43 @@ var list = [
     routeName: '/onboarding',
   ),
   ItemModel(
-    title: 'Furniture',
+    title: 'ListView',
     bgColor: Colors.blueAccent,
     routeName: '/furniture_list',
   ),
   ItemModel(
-    title: 'Detail',
+    title: 'Carousel-01',
     bgColor: Color(0xffed5c48),
     routeName: '/furniture_detail',
   ),
   ItemModel(
-    title: 'City',
+    title: 'Carousel-02',
     bgColor: Color(0xff53b28f),
     routeName: '/city',
   ),
   ItemModel(
-    title: 'Test',
+    title: 'Carousel-03',
     bgColor: Color(0xff7254b2),
-    routeName: '/test',
+    routeName: '/cardlist',
   ),
   ItemModel(
     title: '...',
     bgColor: Color(0xff59bfee),
-    routeName: '/index',
+    routeName: '/',
   ),
   ItemModel(
     title: '...',
     bgColor: Color(0xffb0a4e3),
-    routeName: '/index',
+    routeName: '/',
   ),
   ItemModel(
     title: '...',
     bgColor: Color(0xff80edae),
-    routeName: '/index',
+    routeName: '/',
   ),
   ItemModel(
     title: '...',
     bgColor: Color(0xffff0097),
-    routeName: '/index',
+    routeName: '/',
   ),
 ];

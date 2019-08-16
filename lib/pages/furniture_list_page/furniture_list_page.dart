@@ -25,7 +25,7 @@ class _FurnitureListPageState extends State<FurnitureListPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               IconButton(
-                  icon: Icon(Icons.menu),
+                  icon: Icon(Icons.arrow_back),
                   color: Colors.black54,
                   onPressed: () {
                     Navigator.pop(context);

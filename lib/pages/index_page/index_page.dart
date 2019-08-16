@@ -24,7 +24,7 @@ class IndexPage extends StatelessWidget {
   }
 }
 
-getList(context) {
+List<Widget> getList(context) {
   List<Widget> _list = [];
   for (int i = 0; i < list.length; i++) {
     _list.add(getItem(context, list[i]));
@@ -58,7 +58,7 @@ Widget getItem(context, ItemModel item) {
         child: Center(
             child: Text(
           item.title,
-          style: TextStyle(fontSize: 30.0, color: Colors.white),
+          style: TextStyle(fontSize: 22.0, color: Colors.white),
         ))),
   );
 }

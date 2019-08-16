@@ -126,7 +126,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
                     color: Colors.black,
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/index');
+                    Navigator.pushNamed(context, '/');
                   },
                 )
                     : Container(),
