@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:page_view/model/weekly.dart';
-import 'package:page_view/pages/video_page/chewie_page.dart';
-import 'package:page_view/pages/video_page/video_page.dart';
 import 'package:page_view/utils/data_utils.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -163,12 +161,28 @@ class _WeeklyPageState extends State<WeeklyPage>
 
 
           return InkWell(
-            onTap: () => Navigator.pushNamed(context, '/video', arguments: _item.id),
-//            onTap: (){
+            onTap: (){
+              var _arguments = {
+                'id': _item.id,
+                'title': _item.title,
+                'description': _item.description,
+                'playUrl': _item.playUrl,
+                'category': _item.category,
+                'duration':_duration,
+                'collectionCount': _item.consumption.collectionCount,
+                'shareCount': _item.consumption.shareCount,
+                'replyCount': _item.consumption.replyCount,
+                'authorId': _item.author.id,
+                'authorName': _item.author.name,
+                'authorDescription': _item.author.description,
+                'authorIcon': _item.author.icon,
+                'blurredImg': _item.cover.blurred,
+              };
+              Navigator.pushNamed(context, '/video', arguments: _arguments);
 //              Navigator.push<String>(context, MaterialPageRoute(builder: (BuildContext context){
 //                return VideoPage(id:100);
 //              }));
-//            },
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.only(bottom: 10),

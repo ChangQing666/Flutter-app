@@ -14,14 +14,11 @@ class DataUtils{
   static Future<Weekly> getWeekly(int index) async {
     String _url = '';
     if(index == 0) {
-//      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/weekly';
-      _url = 'http://api.third.cqfee.top/eye/api/v4/rankList/videos?strategy=weekly';
+      _url = Api.RANKLIST_WEEKLY;
     }else if(index == 1) {
-//      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/monthly';
-      _url = 'http://api.third.cqfee.top/eye/api/v4/rankList/videos?strategy=monthly';
+      _url = Api.RANKLIST_MONTHLY;
     }else if(index == 2) {
-//      _url = 'https://www.easy-mock.com/mock/5d4ce3e4d890556a4f4a5e01/eyepetizer/ranklist/historical';
-      _url = 'http://api.third.cqfee.top/eye/api/v4/rankList/videos?strategy=historical';
+      _url = Api.RANKLIST_HISTORICAL;
     }
     var response = await NetUtils.get(_url);
     Weekly weekly = Weekly.fromJson(response);

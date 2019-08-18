@@ -27,7 +27,7 @@ class RouteGenerator {
       case '/ranklist':
         return MaterialPageRoute(builder: (_) => WeeklyPage());
       case '/video':
-        if (args is int) {
+        if (args is Map) {
           return MaterialPageRoute(builder: (_) => VideoPage(params: args));
         }
         return _errorRoute();

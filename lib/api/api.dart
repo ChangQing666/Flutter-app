@@ -1,5 +1,6 @@
 class Api {
-  static const String BASE_URL = 'http://baobab.kaiyanapp.com/api';
+//  static const String BASE_URL = 'http://baobab.kaiyanapp.com/api';
+  static const String BASE_URL = 'http://api.third.cqfee.top/eye/api';
 
   static const String CATEGORIES = BASE_URL + '/v4/categories/all'; // 全部分类
 
