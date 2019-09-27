@@ -64,7 +64,6 @@ class _WeeklyPageState extends State<WeeklyPage>
   void _onLoading(RefreshController controller, Future<Weekly> data) async {
     //monitor fetch data from network
 //    await Future.delayed(Duration(milliseconds: 4000));
-    print("Asd");
     data = DataUtils.getWeekly(_currentIndex);
 //    pageIndex++;
     if (mounted) setState(() {});
@@ -174,7 +173,7 @@ class _WeeklyPageState extends State<WeeklyPage>
                 'replyCount': _item.consumption.replyCount,
                 'authorId': _item.author.id,
                 'authorName': _item.author.name,
-                'authorDescription': _item.author.description,
+                'authorDescription': _item.author.description.split('\n')[0],
                 'authorIcon': _item.author.icon,
                 'blurredImg': _item.cover.blurred,
               };

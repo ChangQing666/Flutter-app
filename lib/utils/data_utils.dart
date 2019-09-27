@@ -1,5 +1,6 @@
 import 'dart:async' show Future;
 import 'package:page_view/api/api.dart';
+import 'package:page_view/model/related.dart';
 import './net_utils.dart';
 import '../model/categories.dart';
 import '../model/news_latest.dart';
@@ -25,6 +26,13 @@ class DataUtils{
     return weekly;
   }
 
+  static Future<Related> getRelated(int id) async {
+    var response = await NetUtils.get(Api.RELATED);
+    print(response);
+    Related related = Related.fromJson(response);
+    print(related);
+    return related;
+  }
   // 全部分类
 //  static Future<Categories> getCategories() async{
 ////    var response = await NetUtils.get(Api.CATEGORIES);
