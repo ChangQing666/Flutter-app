@@ -31,6 +31,7 @@ dependencies:
   pull_to_refresh: ^1.5.3
   cached_network_image: ^1.1.1
   transparent_image: ^1.0.0
+  fish_redux: ^0.2.6
 #  flt_video_player: ^0.0.4
 dev_dependencies:
   flutter_test:

@@ -176,6 +176,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.13"
+  fish_redux:
+    dependency: "direct main"
+    description:
+      name: fish_redux
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.6"
   fixnum:
     dependency: transitive
     description:
